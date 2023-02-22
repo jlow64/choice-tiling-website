@@ -9,9 +9,8 @@ import {
 } from './Navbar.theme';
 
 const Navbar = () => {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
   return (
-    <NavbarContainer>
+    <NavbarContainer id="home-section">
       <NavbarTitle>
         <Link href="/">
           <Image src="/favicon.ico" width={40} height={40} />
@@ -19,37 +18,17 @@ const Navbar = () => {
         Choice Tiling
       </NavbarTitle>
       <NavbarList>
-        <Link href="/">
-          <NavbarListItem
-            onClick={() => setActiveIndex(0)}
-            isActive={activeIndex === 0}
-          >
-            Home
-          </NavbarListItem>
+        <Link href="#home-section">
+          <NavbarListItem>Home</NavbarListItem>
         </Link>
-        <Link href="/about">
-          <NavbarListItem
-            onClick={() => setActiveIndex(1)}
-            isActive={activeIndex === 1}
-          >
-            About us
-          </NavbarListItem>
+        <Link href="#about-section">
+          <NavbarListItem>About us</NavbarListItem>
         </Link>
-        <Link href="/projects">
-          <NavbarListItem
-            onClick={() => setActiveIndex(2)}
-            isActive={activeIndex === 2}
-          >
-            Projects
-          </NavbarListItem>
+        <Link href="#project-section">
+          <NavbarListItem>Projects</NavbarListItem>
         </Link>
-        <Link href="/contact">
-          <NavbarListItem
-            onClick={() => setActiveIndex(3)}
-            isActive={activeIndex === 3}
-          >
-            Contact us
-          </NavbarListItem>
+        <Link href="#contact-section">
+          <NavbarListItem>Contact us</NavbarListItem>
         </Link>
       </NavbarList>
     </NavbarContainer>
