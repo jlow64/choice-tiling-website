@@ -16,7 +16,7 @@ const Gallery = ({
     if (imageIndex > imageList.length - 1) {
       setImageIndex(0);
     }
-  }, [imageIndex]);
+  }, [imageIndex, imageList.length]);
   useEffect(() => {
     const imageTimer = setInterval(
       () => setImageIndex((imageIndex) => imageIndex + 1),
@@ -24,7 +24,7 @@ const Gallery = ({
       imageIndex,
     );
     return () => clearInterval(imageTimer);
-  }, []);
+  }, [imageIndex]);
   return (
     <GalleryContainer height={height} url={imageList[imageIndex]} padding="8%">
       {children}

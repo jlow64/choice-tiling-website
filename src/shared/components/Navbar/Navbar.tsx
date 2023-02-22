@@ -13,7 +13,12 @@ const Navbar = () => {
     <NavbarContainer id="home-section">
       <NavbarTitle>
         <Link href="/">
-          <Image src="/favicon.ico" width={40} height={40} />
+          <Image
+            alt="choice-tiling logo"
+            src="/favicon.ico"
+            width={40}
+            height={40}
+          />
         </Link>
         Choice Tiling
       </NavbarTitle>
