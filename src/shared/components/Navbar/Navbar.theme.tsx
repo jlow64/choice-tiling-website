@@ -1,29 +1,17 @@
-import styled, { keyframes } from 'styled-components';
-
-interface NavbarItemIndex {
-  isActive: boolean;
-}
-
-const fadeInAnimation = keyframes`
-  0% { opacity: 0 }
-  20% { opacity: 0.2 }
-  40% { opacity: 0.4; }
-  60% { opacity: 0.6; }
-  80% { opacity: 0.8; }
-  100% { opacity: 1; }
-`;
+import styled from 'styled-components';
+import { fadeInAnimation } from '@/shared/styles/pages.theme';
 
 export const NavbarContainer = styled.nav`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 80px;
+  height: 10vh;
   font-family: ${(props) => props.theme.fonts[0]};
   letter-spacing: 1px;
   color: ${(props) => props.theme.colors.darkGrey};
   background-color: ${(props) => props.theme.colors.gentleWhite};
-  margin-top: 10px;
-  /* border: 1px solid yellow; */
+  border-bottom: 2px solid ${(props) => props.theme.colors.darkGrey};
+  z-index: 50;
 `;
 
 export const NavbarTitle = styled.a`
@@ -32,10 +20,10 @@ export const NavbarTitle = styled.a`
   align-items: center;
   justify-content: right;
   font-size: 2rem;
+  font-weight: 800;
   text-decoration: none;
   height: 100%;
   gap: 1rem;
-  /* border: 1px solid red; */
 `;
 
 export const NavbarList = styled.div`
@@ -46,11 +34,10 @@ export const NavbarList = styled.div`
   align-items: center;
   justify-content: space-evenly;
   align-content: center;
-  /* gap: rem; */
   height: 100%;
 `;
 
-export const NavbarListItem = styled.li<NavbarItemIndex>`
+export const NavbarListItem = styled.li`
   display: flex;
   font-size: ${(props) => props.theme.fontSizes.medium};
   justify-content: center;
@@ -58,9 +45,8 @@ export const NavbarListItem = styled.li<NavbarItemIndex>`
   height: 3rem;
   color: ${(props) => props.theme.colors.darkGrey};
   min-width: 10rem;
-  border: ${(props) =>
-    props.isActive ? `2px solid ${props.theme.colors.mediumGrey}` : 'none'};
-  border-radius: 20px;
+  border-radius: 5px;
+  cursor: pointer;
 
   &:hover {
     color: ${(props) => props.theme.colors.gentleWhite};

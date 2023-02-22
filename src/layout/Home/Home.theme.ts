@@ -1,22 +1,19 @@
 import styled from 'styled-components';
+import { fadeInAnimation } from '@/shared/styles/pages.theme';
 
-export const HomeBody = styled.div`
-  padding: 8%;
-  /* border: 2px solid green; */
-`;
-
-export const HomeTitle = styled.h1`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+export const HomeButton = styled.button`
   font-family: ${(props) => props.theme.fonts[0]};
-  /* border: 2px solid red; */
-`;
-
-export const HomeDescription = styled.p`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  font-family: ${(props) => props.theme.fonts[0]};
-  /* border: 2px solid blue; */
+  height: 3rem;
+  background: transparent;
+  color: ${(props) => props.theme.colors.darkGrey};
+  min-width: 10rem;
+  border: 1px solid ${(props) => props.theme.colors.mediumGrey};
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    color: ${(props) => props.theme.colors.gentleWhite};
+    background-color: ${(props) => props.theme.colors.mediumGrey};
+    animation-name: ${fadeInAnimation};
+    animation-duration: 0.2s;
+  }
 `;
