@@ -5,6 +5,7 @@ import {
   Title,
   SubTitle,
   ContentContainer,
+  Heading,
 } from '@/shared/styles/pages.theme';
 import Link from 'next/link';
 import { HomeButton } from './Home.theme';
@@ -31,7 +32,7 @@ const Home = () => {
         url="/images/tiling-img-2.png"
       >
         <ContentContainer>
-          <Title fontSize="3rem">About us</Title>
+          <SubTitle fontSize="3rem">About us</SubTitle>
           <Description>
             We are a locally run tiling business thats been around for 10+
             years.
@@ -50,8 +51,8 @@ const Home = () => {
         url="/images/tiling-img-3.png"
       >
         <ContentContainer>
-          <Title fontSize="3rem">Projects</Title>
-          <SubTitle>Auckland University</SubTitle>
+          <SubTitle fontSize="3rem">Projects</SubTitle>
+          <Heading>Auckland University</Heading>
           <Description>Description... Type your Description here</Description>
         </ContentContainer>
       </BodyContainer>
@@ -61,7 +62,7 @@ const Home = () => {
         url="/images/tiling-img-4.png"
       >
         <ContentContainer>
-          <Title fontSize="3rem">Contact us</Title>
+          <SubTitle fontSize="3rem">Contact us</SubTitle>
           <Description>
             <MdOutlineEmail cursor={12} size={'1.5rem'} />
             Main@choicetiling.co.nz
