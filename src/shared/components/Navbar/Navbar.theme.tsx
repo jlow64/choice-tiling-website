@@ -5,7 +5,7 @@ export const NavbarContainer = styled.nav`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 10vh;
+  height: 80px;
   font-family: ${(props) => props.theme.fonts[0]};
   letter-spacing: 1px;
   color: ${(props) => props.theme.colors.darkGrey};
@@ -15,19 +15,22 @@ export const NavbarContainer = styled.nav`
 `;
 
 export const NavbarTitle = styled.a`
-  flex: 20%;
+  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: left;
+  padding: 2%;
+  min-width: 300px;
   font-size: 2rem;
   font-weight: 800;
   text-decoration: none;
   height: 100%;
   gap: 1rem;
+  overflow: hidden;
 `;
 
 export const NavbarList = styled.div`
-  flex: 80%;
+  flex: 3;
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -35,6 +38,9 @@ export const NavbarList = styled.div`
   justify-content: space-evenly;
   align-content: center;
   height: 100%;
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export const NavbarListItem = styled.li`

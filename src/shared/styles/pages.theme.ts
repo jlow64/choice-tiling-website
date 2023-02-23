@@ -66,6 +66,9 @@ export const Title = styled.h1<TextProps>`
   flex-wrap: wrap;
   font-family: ${(props) => props.theme.fonts[0]};
   font-size: ${({ fontSize }) => fontSize || '8rem'};
+  @media screen and (max-width: 600px) {
+    font-size: 4rem;
+  }
 `;
 
 export const SubTitle = styled.h2<TextProps>`
@@ -74,6 +77,20 @@ export const SubTitle = styled.h2<TextProps>`
   flex-wrap: wrap;
   font-family: ${(props) => props.theme.fonts[0]};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : '2rem')};
+  @media screen and (max-width: 600px) {
+    font-size: 3rem;
+  }
+`;
+
+export const Heading = styled.h3<TextProps>`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: ${(props) => props.theme.fonts[0]};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : '1.5rem')};
+  @media screen and (max-width: 600px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const Description = styled.p<TextProps>`
@@ -83,4 +100,7 @@ export const Description = styled.p<TextProps>`
   font-family: ${(props) => props.theme.fonts[0]};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : '1.2rem')};
   gap: 1rem;
+  @media screen and (max-width: 600px) {
+    font-size: 1.3rem;
+  }
 `;
