@@ -120,10 +120,10 @@ const Home = () => {
             company in most of the business in commercial. Choice Tiling NZ
             Limited established itself as a company that is constantly striving
             for new innovative standards and success. Every opportunity we must
-            provide our services, we will do our best to meet our customers'
-            needs and expectations. Choice Tiling is a company that will provide
-            any requirement for a successful project as well as a high standard
-            of service.
+            provide our services, we will do our best to meet our
+            customer&apos;s needs and expectations. Choice Tiling is a company
+            that will provide any requirement for a successful project as well
+            as a high standard of service.
           </Description>
           <Line id="line-1" />
         </ContentContainer>
