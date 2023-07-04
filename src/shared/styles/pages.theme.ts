@@ -24,10 +24,8 @@ export const PageContainer = styled.div`
   height: 400vh;
   width: 100vw;
   animation-name: ${breatheAnimation};
-  animation-duration: 8s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
-  overflow-x: hidden;
-  border-left: 3px solid ${(props) => props.theme.colors.darkGrey};
 `;
 
 interface BodyContainerProps {
@@ -41,23 +39,39 @@ interface TextProps {
 }
 
 export const BodyContainer = styled.section<BodyContainerProps>`
+  position: relative;
   display: flex;
   flex-direction: row;
   padding: ${({ padding }) => padding || '8%'};
   height: ${({ height }) => height || '100vh'};
-  background-image: url(${({ url }) => url});
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-image: url(${({ url }) => url || ''});
+    background-size: cover;    
+    filter: brightness(50%);
+    height: ${({ height }) => height || '100vh'};
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
 `;
 
 export const ContentContainer = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 3%;
   min-width: 40%;
   max-width: 700px;
+  min-height: 350px;
   max-height: 50%;
-  background-color: ${(props) => props.theme.colors.transparentWhite};
   gap: 1rem;
+  filter: brightness(100%); 
   border-radius: 5px;
+  overflow: hidden;
 `;
 
 export const Title = styled.h1<TextProps>`
@@ -66,6 +80,9 @@ export const Title = styled.h1<TextProps>`
   flex-wrap: wrap;
   font-family: ${(props) => props.theme.fonts[0]};
   font-size: ${({ fontSize }) => fontSize || '8rem'};
+  color: ${(props) => props.theme.colors.gentleWhite};
+  text-shadow: #000 1px 0 3px;
+  filter: brightness(100%); 
   @media screen and (max-width: 600px) {
     font-size: 4rem;
   }
@@ -77,6 +94,9 @@ export const SubTitle = styled.h2<TextProps>`
   flex-wrap: wrap;
   font-family: ${(props) => props.theme.fonts[0]};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : '2rem')};
+  color: ${(props) => props.theme.colors.gentleWhite};
+  text-shadow: #000 1px 0 3px; 
+  filter: brightness(100%);
   @media screen and (max-width: 600px) {
     font-size: 3rem;
   }
@@ -88,6 +108,9 @@ export const Heading = styled.h3<TextProps>`
   flex-wrap: wrap;
   font-family: ${(props) => props.theme.fonts[0]};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : '1.5rem')};
+  color: ${(props) => props.theme.colors.gentleWhite};
+  text-shadow: #000 1px 0 3px; 
+  filter: brightness(100%);
   @media screen and (max-width: 600px) {
     font-size: 1.6rem;
   }
@@ -100,7 +123,20 @@ export const Description = styled.p<TextProps>`
   font-family: ${(props) => props.theme.fonts[0]};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : '1.2rem')};
   gap: 1rem;
+  color: ${(props) => props.theme.colors.gentleWhite};
+  text-shadow: #000 1px 0 3px; 
+  filter: brightness(100%);
   @media screen and (max-width: 600px) {
     font-size: 1.3rem;
   }
+`;
+
+export const Line = styled.span`
+  width: 100%;
+  max-width: 900px;
+  height: 8px;
+  margin: 0 0 10px 0;
+  position: relative;
+  display: inline-block;
+  background-color: rgba(255,255,255,1);
 `;

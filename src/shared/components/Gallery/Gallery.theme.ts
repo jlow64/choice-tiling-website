@@ -10,7 +10,17 @@ export const GalleryContainer = styled.section<{
   flex-direction: column;
   padding: ${({ padding }) => padding || '8%'};
   height: ${({ height }) => height || '100vh'};
-  height: ${({ height }) => height || '100vh'};
-  background-image: url(${({ url }) => url || ''});
   animation: ${fadeInAnimation};
+  &:before {
+    content: "";
+    background-image: url(${({ url }) => url || ''});
+    background-size: cover;
+    position: absolute;
+    height: ${({ height }) => height || '100vh'};
+    filter: brightness(50%);
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
 `;

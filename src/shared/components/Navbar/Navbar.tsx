@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -10,24 +10,27 @@ import {
 
 const Navbar = () => {
   return (
-    <NavbarContainer id="home-section">
-      <NavbarTitle>
-        <Link href="/">
-          <Image
-            alt="choice-tiling logo"
-            src="/favicon.ico"
-            width={40}
-            height={40}
-          />
-        </Link>
-        Choice Tiling
-      </NavbarTitle>
+    <NavbarContainer>
       <NavbarList>
+        <NavbarTitle>
+          <Link href="/">
+            <Image
+              alt="choice-tiling logo"
+              src="/favicon.ico"
+              width={40}
+              height={40}
+            />
+          </Link>
+          Choice Tiling
+        </NavbarTitle>
         <Link href="#home-section">
           <NavbarListItem>Home</NavbarListItem>
         </Link>
         <Link href="#about-section">
           <NavbarListItem>About us</NavbarListItem>
+        </Link>
+        <Link href="#services-section">
+          <NavbarListItem>Services</NavbarListItem>
         </Link>
         <Link href="#project-section">
           <NavbarListItem>Projects</NavbarListItem>

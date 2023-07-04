@@ -20,13 +20,18 @@ const Gallery = ({
   useEffect(() => {
     const imageTimer = setInterval(
       () => setImageIndex((imageIndex) => imageIndex + 1),
-      3000,
+      6000,
       imageIndex,
     );
     return () => clearInterval(imageTimer);
   }, [imageIndex]);
   return (
-    <GalleryContainer height={height} url={imageList[imageIndex]} padding="8%">
+    <GalleryContainer
+      id="home-section"
+      height={height}
+      url={imageList[imageIndex]}
+      padding="16%"
+    >
       {children}
     </GalleryContainer>
   );
