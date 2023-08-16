@@ -11,18 +11,23 @@ import {
 const Navbar = () => {
   return (
     <NavbarContainer>
+      <NavbarTitle>
+        {/* <Image
+            alt="choice-tiling logo"
+            src="/favicon.ico"
+            width={40}
+            height={40}
+          />
+          Choice Tiling */}
+        <Image
+          priority
+          alt="test-choice-tiling"
+          src="/images/choice-logo.png"
+          width={250}
+          height={40}
+        />
+      </NavbarTitle>
       <NavbarList>
-        <NavbarTitle>
-          <Link href="/">
-            <Image
-              alt="choice-tiling logo"
-              src="/favicon.ico"
-              width={40}
-              height={40}
-            />
-          </Link>
-          Choice Tiling
-        </NavbarTitle>
         <Link href="#home-section">
           <NavbarListItem>Home</NavbarListItem>
         </Link>

@@ -1,12 +1,15 @@
 import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
-import Image from 'next/image';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MdOutlineEmail, MdPhone } from 'react-icons/md';
+import { imageUrls } from '@/shared/constants/constants';
 import {
   BodyContainer,
+  ContactContainer,
+  ContactColumn,
   Description,
+  Card,
   Title,
   SubTitle,
   ContentContainer,
@@ -15,7 +18,6 @@ import {
 } from '@/shared/styles/pages.theme';
 import { HomeButton } from './Home.theme';
 import Gallery from '@/shared/components/Gallery';
-import { imageUrls } from '@/shared/constants/constants';
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -100,7 +102,7 @@ const Home = () => {
       <Gallery imageList={imageUrls} height="100vh">
         <div ref={galleryRef}>
           <Description fontSize="2rem">
-            With over 35+ years of experience,
+            With over 35+ years of experience
           </Description>
           <Title>We know Tiling.</Title>
           <Line id="line-start" />
@@ -111,66 +113,73 @@ const Home = () => {
         id="about-section"
         height="100vh"
         url="/images/tiling-img-2.png"
-        padding="16%"
       >
         <ContentContainer>
-          <SubTitle fontSize="3rem">About us</SubTitle>
-          <Description fontSize="1rem">
-            Choice Tiling NZ Limited is a well-known Auckland based tiling
-            company in most of the business in commercial. Choice Tiling NZ
-            Limited established itself as a company that is constantly striving
-            for new innovative standards and success. Every opportunity we must
-            provide our services, we will do our best to meet our
+          <SubTitle fontSize="2rem" color="dark">
+            About us
+          </SubTitle>
+          <Description fontSize="1rem" color="dark">
+            Choice Tiling NZ Limited is an established Auckland based tiling
+            company with experience in commercial and residential. Choice Tiling
+            NZ Limited has established itself as a company that is constantly
+            striving for innovative standards and success. Every opportunity
+            that we provide our services, we do our best to meet our
             customer&apos;s needs and expectations. Choice Tiling is a company
             that will provide any requirement for a successful project as well
             as a high standard of service.
           </Description>
-          <Line id="line-1" />
+          <Line id="line-1" color="dark" />
         </ContentContainer>
       </BodyContainer>
       <BodyContainer
         id="services-section"
         height="100vh"
         url="/images/tiling-img-3.png"
-        padding="16%"
       >
         <ContentContainer>
-          <SubTitle fontSize="3rem">Services</SubTitle>
-          <Description>
+          <SubTitle fontSize="2rem" color="dark">
+            Services
+          </SubTitle>
+          <Description color="dark">
             As Tiling professionals, our services include:
           </Description>
-          <Description>
-            <ul>
-              <li>Free quoting</li>
-              <li>Tiling</li>
-              <li>Waterproofing</li>
-              <li>And much more...</li>
-            </ul>
+          <Description color="dark">
+            <Card>Free Quotation</Card>
+            <Card>Substrate Preparation</Card>
+            <Card>Tiling</Card>
+            <Card>Waterproofing</Card>
+            <Card>Concrete Repair</Card>
+            <Card>And much more...</Card>
           </Description>
-          <Line id="line-2" />
+          <Line id="line-2" color="dark" />
         </ContentContainer>
       </BodyContainer>
       <BodyContainer
         id="project-section"
         height="100vh"
         url="/images/tiling-img-3.png"
-        padding="16%"
       >
         <ContentContainer>
-          <SubTitle fontSize="3rem">Projects</SubTitle>
-          <Heading>Auckland Airport</Heading>
-          <Description>This project was concepted in...</Description>
-          <Line id="line-3" />
+          <SubTitle fontSize="2rem" color="dark">
+            Projects
+          </SubTitle>
+          <Heading color="dark">Auckland Airport</Heading>
+          <Description color="dark">
+            This project was concepted in...
+          </Description>
+          <Line id="line-3" color="dark" />
         </ContentContainer>
       </BodyContainer>
-      <BodyContainer
-        id="contact-section"
-        height="100vh"
-        url="/images/tiling-img-4.png"
-        padding="16%"
-      >
-        <ContentContainer>
-          <SubTitle fontSize="3rem">Contact us</SubTitle>
+      <ContactContainer id="contact-section">
+        <ContactColumn>
+          <Heading>Choice Tiling</Heading>
+          <Description fontSize="15px" color="dark">
+            We provide free quotations. Get in touch with our tiling specialists
+            to give your project the finishing touches it deserves.
+          </Description>
+        </ContactColumn>
+        <ContactColumn>
+          <Heading>Contact us</Heading>
           <Description>
             <MdOutlineEmail cursor={12} size={'1.5rem'} />
             Main@choicetiling.co.nz
@@ -179,14 +188,13 @@ const Home = () => {
             <MdPhone size={'1.5rem'} />
             Call us on 0274988483
           </Description>
-          <Description>Or fill in our form here:</Description>
           <Description>
             <Link href="#home-section">
               <HomeButton>Go back to the Top</HomeButton>
             </Link>
           </Description>
-        </ContentContainer>
-      </BodyContainer>
+        </ContactColumn>
+      </ContactContainer>
     </div>
   );
 };

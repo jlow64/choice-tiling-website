@@ -6,7 +6,7 @@ export const NavbarContainer = styled.nav`
   left: 0;
   top: 0;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-direction: row;
   flex-wrap: wrap;
   height: 80px;
@@ -15,28 +15,28 @@ export const NavbarContainer = styled.nav`
   letter-spacing: 1px;
   color: ${(props) => props.theme.colors.darkGrey};
   background-color: ${(props) => props.theme.colors.gentleWhite};
-  opacity: 0.9;
   z-index: 50;
   overflow: hidden;
 `;
 
-export const NavbarTitle = styled.a`
+export const NavbarTitle = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2%;
-  min-width: 400px;
+  justify-content: left;
+  padding-left: 300px;
+  flex: 1;
   font-size: 2rem;
   font-weight: 800;
   text-decoration: none;
-  height: 100%;
-  gap: 1rem;
   overflow: hidden;
+  color: ${(props) => props.theme.colors.darkGrey};
+  background: ${(props) => props.theme.colors.gentleWhite};
 `;
 
 export const NavbarList = styled.div`
   display: flex;
   flex-direction: row;
+  flex: 1;
+  padding-right: 100px;
   list-style: none;
   align-items: center;
   justify-content: space-evenly;

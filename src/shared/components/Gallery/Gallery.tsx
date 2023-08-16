@@ -1,9 +1,10 @@
 import { PropsWithChildren, useEffect, useState } from 'react';
 import { GalleryContainer } from './Gallery.theme';
+import { UrlObject } from '@/shared/typings/data.typing';
 
 interface GalleryPageProps {
   height: string;
-  imageList: Array<string>;
+  imageList: Array<UrlObject>;
 }
 
 const Gallery = ({
@@ -29,7 +30,7 @@ const Gallery = ({
     <GalleryContainer
       id="home-section"
       height={height}
-      url={imageList[imageIndex]}
+      url={imageList?.[imageIndex]?.url}
       padding="16%"
     >
       {children}
